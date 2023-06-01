@@ -7,12 +7,19 @@
 
 2. Simulator Library
    Generate Xilinx simulation libraries using tutorial below:
+   
    2.1. cd Riviera-PRO-2023.04-x64/etc
+   
    2.2. source setenv
+   
    2.3. source setgcc
+   
    2.4. cd Xilinx/Vivado/2022.1/data/simmodels/riviera/
+   
    2.5. ln -s 2021.04 2023.04
+   
    2.6. Open Vivado.
+   
    2.7. Go to Tools | Compile Simulation Libraries
  
   ![CompVivSimLib_fig1](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/b920c5d1-b591-4db7-9441-be2bebc4e553)
