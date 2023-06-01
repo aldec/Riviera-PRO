@@ -19,8 +19,8 @@
   
   Figure 1: Accessing the Compile Simulation Libraries.
   
-  8. The Compile Simulation Libraries will open.
-  9. Select Riviera-PRO under Simulator. Select the desired language and libraries.
+   8. The Compile Simulation Libraries will open.
+   9. Select Riviera-PRO under Simulator. Select the desired language and libraries.
    
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4f31b36e-b6e8-4e15-800a-ca7708206a6c)
   
