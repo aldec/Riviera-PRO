@@ -3,10 +3,18 @@
 1. Requirements
    - Vivado/Vitis 2022.1
    - Petalinux 2022.1
-   - Riviera-Pro 2022.10 or newer
+   - Riviera-Pro 2023.04
 
 2. Simulator Library
-   - Generate Xilinx simulation libraries using tutorial below:
+   Generate Xilinx simulation libraries using tutorial below:
+   1. cd Riviera-PRO-2023.04-x64/etc
+   2. source setenv
+   3. source setgcc
+   4. cd Xilinx/Vivado/2022.1/data/simmodels/riviera/
+   5. ln -s 2021.04 2023.04
+   6. Open Vivado.
+   7. Go to Tools | Compile Simulation Libraries. 
+![CompVivSimLib_fig1](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/b920c5d1-b591-4db7-9441-be2bebc4e553)
 
      
 	 
