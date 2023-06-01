@@ -7,32 +7,32 @@
 
 2. Simulator Library
    Generate Xilinx simulation libraries using tutorial below:
-   1. cd Riviera-PRO-2023.04-x64/etc
-   2. source setenv
-   3. source setgcc
-   4. cd Xilinx/Vivado/2022.1/data/simmodels/riviera/
-   5. ln -s 2021.04 2023.04
-   6. Open Vivado.
-   7. Go to Tools | Compile Simulation Libraries
+   2.1. cd Riviera-PRO-2023.04-x64/etc
+   2.2. source setenv
+   2.3. source setgcc
+   2.4. cd Xilinx/Vivado/2022.1/data/simmodels/riviera/
+   2.5. ln -s 2021.04 2023.04
+   2.6. Open Vivado.
+   2.7. Go to Tools | Compile Simulation Libraries
  
   ![CompVivSimLib_fig1](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/b920c5d1-b591-4db7-9441-be2bebc4e553)
   
   Figure 1: Accessing the Compile Simulation Libraries.
   
-   8. The Compile Simulation Libraries will open.
-   9. Select Riviera-PRO under Simulator. Select the desired language and libraries.
+   2.8. The Compile Simulation Libraries will open.
+   2.9. Select Riviera-PRO under Simulator. Select the desired language and libraries.
    
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4f31b36e-b6e8-4e15-800a-ca7708206a6c)
   
   Figure 2: Compile Simulation Libraries: Simulator, Language and Library selection. 
   
-  10. Under the Compiled library location, select the directory where you want the compiled libraries to be saved. Under the Simulator executable path, provide the path to the directory containing the riviera file in the Riviera-PRO installation directory. Under the GCC executable path, provide the path to the directory containing the gcc file in the Riviera-PRO installation directory.
+  2.10. Under the Compiled library location, select the directory where you want the compiled libraries to be saved. Under the Simulator executable path, provide the path to the directory containing the riviera file in the Riviera-PRO installation directory. Under the GCC executable path, provide the path to the directory containing the gcc file in the Riviera-PRO installation directory.
   
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/dd0533b7-4fcc-4b7a-bf5b-e1c0fb092573)
   
   Figure 3: Compile Simulation Libraries: Compiled library location, Simulator executable path and GCC executable path.
   
-  11. By default, all the IP modules available in the Vivado IP Catalog are selected for compilation. You can change that behavior by clearing the Compile Xilinx IP check box. When cleared, only the basic simulation libraries are compiled. You may also want to enable recompilation of libraries already present in the output directory. To do so, select the Overwrite the current pre-compiled libraries check box.
+  2.11. By default, all the IP modules available in the Vivado IP Catalog are selected for compilation. You can change that behavior by clearing the Compile Xilinx IP check box. When cleared, only the basic simulation libraries are compiled. You may also want to enable recompilation of libraries already present in the output directory. To do so, select the Overwrite the current pre-compiled libraries check box.
   
 
 
