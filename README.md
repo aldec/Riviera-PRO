@@ -63,6 +63,7 @@
 **3. Settings**
    
    **3.1.** Update the paths in the file /AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/settings.sh
+   
    **3.2.** source settings.sh
 
 **4. Running Examples**
