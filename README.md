@@ -6,6 +6,7 @@
    - Riviera-Pro 2023.04
 
 **2. Simulator Library**
+   
    Generate Xilinx simulation libraries using tutorial below:
    
    **2.1.** cd Riviera-PRO-2023.04-x64/etc
@@ -60,10 +61,12 @@
   The output directory (specified with the -dir argument) will contain the library.cfg configuration file and the folders with pre-compiled libraries.
   
 **3. Settings**
+   
    **3.1.** Update the paths in the file /AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/settings.sh
    **3.2.** source settings.sh
 
 **4. Running Examples**
+   
    The following examples are supported by Riviera-PRO. Selecting a specific example will redirect to the place where the files modified for Riviera-PRO are located, as well as the description of the run and the results.
    - [Runtime Parameter Reconfiguration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/03-rtp-reconfiguration)
    - [AI Engine Versal Integration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration)
