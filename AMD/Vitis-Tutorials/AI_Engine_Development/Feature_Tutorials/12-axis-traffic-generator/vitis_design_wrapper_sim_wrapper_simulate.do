@@ -27,9 +27,7 @@ if { [info exists ::env(USER_PRE_SIM_SCRIPT)] } {
 }
 
 if { ![batch_mode] } {
-	wave -vgroup "CIPS" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/CIPS_0/*
-	wave -vgroup "CIPS_NOC" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/cips_noc/*
-	wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
+	wave *
 } else {
 	log *
 }
