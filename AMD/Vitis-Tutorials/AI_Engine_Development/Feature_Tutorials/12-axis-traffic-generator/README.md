@@ -42,7 +42,6 @@
   export XILINX_XRT=/usr
   ./host.exe a.xclbin
 ```
-  4. 
 
   **4.** After some time the test should succeed.
 
