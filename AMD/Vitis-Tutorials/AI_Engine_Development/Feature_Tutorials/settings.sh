@@ -39,6 +39,3 @@ source settings64.sh
 
 #Set up environment for PYTHONPATH
 export PYTHONPATH=${XILINX_VIVADO}/data/emulation/hw_em/lib/python/:${XILINX_VIVADO}/data/emulation/ip_utils/xtlm_ipc/xtlm_ipc_v1_0/python/:${PYTHONPATH}
-
-#Set up environment for DSPLIB_ROOT
-export DSPLIB_ROOT=<Vitis_Libraries_path>/Vitis_Libraries/dsp/
