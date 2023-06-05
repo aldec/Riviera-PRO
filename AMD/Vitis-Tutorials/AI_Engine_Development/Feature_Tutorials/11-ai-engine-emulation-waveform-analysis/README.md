@@ -8,7 +8,7 @@
 
 **Step 3.** Generating a Code Coverage HTML report
 
-##**Steps 1: Build Design** 
+## **Steps 1: Build Design** 
 
   **1.** Update the paths in the file `system_riviera.cfg`
 
@@ -19,8 +19,8 @@
       `make aie aiesim kernels xclbin host package`
   
     **2.** If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai- engine-emulation-waveform-analysis/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
-  
-##**Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
+
+## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
 
   **1.** To launch emulation with the Riviera-PRO Waveform GUI run the following command.  
 
@@ -68,7 +68,7 @@
 
   Type the `endsim` command in the console.
 
-**Step 3.** Generate Code Coverage HTML report
+## **Step 3.** Generate Code Coverage HTML report
 
   **1.** Update path in:
   
