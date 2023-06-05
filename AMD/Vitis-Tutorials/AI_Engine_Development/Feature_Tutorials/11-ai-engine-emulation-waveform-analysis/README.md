@@ -14,11 +14,11 @@
 
   **2.** To build the design please follow the steps described [here](https://github.com/Xilinx/Vitis-Tutorials/tree/2022.1/AI_Engine_Development/Feature_Tutorials/11-ai-engine-emulation-waveform-analysis) and then go to **Step 2.** or use the short version below:
 
-    Build design
+  To build the design run the following command
   
-      `make aie aiesim kernels xclbin host package`
+  `make aie aiesim kernels xclbin host package`
   
-    If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai- engine-emulation-waveform-analysis/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai- engine-emulation-waveform-analysis/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
 ## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
 
