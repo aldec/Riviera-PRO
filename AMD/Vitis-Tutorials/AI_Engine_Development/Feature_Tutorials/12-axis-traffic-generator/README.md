@@ -49,7 +49,7 @@
   
   **5.** A matplotlib window will appear that looks as follows:
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/ddb8daf1-929e-43fc-ae9a-67b3b92e1560)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a9d5415d-7640-47dd-8bee-55477ce21c2a)
 
   **6.** To exit QEMU press `Ctrl+A, x`
 
