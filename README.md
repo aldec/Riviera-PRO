@@ -1,11 +1,11 @@
-# Running AMD Vitis™ In-Depth Tutorials with Riviera-PRO
+# System Simulation of Versal ACAP Feature Tutorials with Riviera-PRO
 
 **1. Requirements**
    - Vivado/Vitis 2022.1
    - Petalinux 2022.1
    - Riviera-Pro 2023.04
 
-**2. Simulator Library**
+**2. Compile Simulation Libraries**
    
    Generate Xilinx simulation libraries using tutorial below:
    
