@@ -45,19 +45,13 @@
 
   **4.** After some time the test should succeed.
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/bbbe8950-f041-446c-8c88-203b84eadc88)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/bc03c823-c663-4161-ab23-fb3c009879a0)
+  
+  **5.** A matplotlib window will appear that looks as follows:
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/ddb8daf1-929e-43fc-ae9a-67b3b92e1560)
 
-  **5.** To exit QEMU press `Ctrl+A, x`
-
-  **6.** Expand signal groups on Waveform.
-
-  - S2MM - Sample signals
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d97259fc-828b-4735-8de7-6413755aa543)
-
-  - DDR4 - Sample signals
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/c81a0e76-f1a4-4405-ab4b-eeb32bcc9334)
+  **6.** To exit QEMU press `Ctrl+A, x`
 
   **7.** Stop simulation.
 
@@ -67,7 +61,7 @@
 
   **1.** Update path in:
   
-  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/05-AI-engine-versal-integration <Example_path>/05-AI-engine-versal-integration/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
+  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/12-axis-traffic-generator <Example_path>/12-axis-traffic-generator/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
   
   **2.** Run `acdb report` to generate the report in html format 
   
@@ -75,11 +69,11 @@
   
   - Sample Summary
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f866f11f-056e-461c-95fc-6a5f96e684b9)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/401a2337-6de4-48d8-a46f-c37023f055c0)
 
   - Sample Statement
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/9a0472a2-f9f3-45da-a551-055a98d2a13f)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/5aec1620-646a-4f30-8894-486a2d398558)
 
   
 
