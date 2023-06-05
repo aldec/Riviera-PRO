@@ -35,9 +35,7 @@
   type in the following commands to launch the tutorial application:
 ```
   cd /run/media/*1
-
   export XILINX_XRT=/usr
-
   ./host.exe a.xclbin
 ```
   **4.** After some time the test should succeed.
