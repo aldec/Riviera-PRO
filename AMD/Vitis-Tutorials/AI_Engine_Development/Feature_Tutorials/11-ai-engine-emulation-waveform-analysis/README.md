@@ -14,11 +14,11 @@
 
   **2.** To build the design please follow the steps described [here](https://github.com/Xilinx/Vitis-Tutorials/tree/2022.1/AI_Engine_Development/Feature_Tutorials/11-ai-engine-emulation-waveform-analysis) and then go to **Step 2.** or use the short version below:
 
-    **1.** Build design
+    Build design
   
       `make aie aiesim kernels xclbin host package`
   
-    **2.** If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai- engine-emulation-waveform-analysis/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+    If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai- engine-emulation-waveform-analysis/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
 ## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
 
@@ -48,21 +48,21 @@
 
   **6.** Expand signal groups on Waveform.
 
-    - CIPS - Sample signals
+  - CIPS - Sample signals
 
-    ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/e1d77a08-7a7c-465b-8209-11e2d12fb718)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/e1d77a08-7a7c-465b-8209-11e2d12fb718)
   
-    - NOISE - Sample signals
+  - NOISE - Sample signals
 
-    ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/5d6ee09e-49f5-43ed-b9d7-56451a08d568)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/5d6ee09e-49f5-43ed-b9d7-56451a08d568)
   
-    - S2MM - Sample signals
+  - S2MM - Sample signals
 
-    ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/3ea7aa3c-67a4-4054-b5af-1e27f3252901)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/3ea7aa3c-67a4-4054-b5af-1e27f3252901)
 
-    - DDR4 - Sample signals
+  - DDR4 - Sample signals
 
-    ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/0b998bed-6f2f-4064-8caf-c860964b2cb8)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/0b998bed-6f2f-4064-8caf-c860964b2cb8)
 
   **7.** Stop simulation.
 
