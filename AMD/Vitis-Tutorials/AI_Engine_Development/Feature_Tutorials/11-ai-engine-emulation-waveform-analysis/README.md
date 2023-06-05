@@ -35,9 +35,7 @@
   type in the following commands to launch the tutorial application:
 ```
   mount /dev/mmcblk0p1 /mnt
-
   cd /mnt
-
   ./host.exe a.xclbin
 ```
   **4.** After some time the test should succeed.
