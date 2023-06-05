@@ -4,7 +4,7 @@
 
 **Step 1.** Building the Design
 
-**Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
+**Step 2.** Launching Emulation with the Riviera-PRO GUI
 
 **Step 3.** Generating a Code Coverage HTML report
 
@@ -22,11 +22,11 @@
   
   `make aie xclbin host package`
   
-  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+  If you want to use a macro prepared to using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
-## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
+## **Step 2.** Launching Emulation with the Riviera-PRO GUI
 
-  **1.** To launch emulation with the Riviera-PRO Waveform GUI run the following command.  
+  **1.** To launch emulation with the Riviera-PRO GUI run the following command.  
 
   `make run_emu`
   
