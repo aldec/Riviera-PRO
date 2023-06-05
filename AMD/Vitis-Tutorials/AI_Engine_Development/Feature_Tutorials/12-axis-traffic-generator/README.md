@@ -14,7 +14,7 @@
   
   **2.** Download DSP Vitis Library
   
-    `./env_setup.sh`
+   `./env_setup.sh`
 
   **3.** To build the design please follow the steps described [here](https://github.com/Xilinx/Vitis-Tutorials/tree/2022.1/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator) and then go to **Step 2.** or use the short version below:
 
