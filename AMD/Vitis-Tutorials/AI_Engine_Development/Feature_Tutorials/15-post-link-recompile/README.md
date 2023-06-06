@@ -108,11 +108,11 @@
 
   - CIPS - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/8ba1ac0a-426f-43b3-8615-7b892fe8d3aa)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/6b0b0397-58e0-49f0-8650-5990884652b0)
 
   - DDR4 - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/7a7ab2c9-8471-4e48-a080-2215dbf4d13e)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d1f87460-5ac0-4722-8cf4-e7bb8b037536)
 
   **6.** Stop simulation.
 
@@ -130,11 +130,11 @@
   
   - Sample Summary
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/be1db294-20e3-4fdf-bf14-1b3c5d1cdbae)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/50373940-c79d-45a9-b554-9ba23de578dd)
 
   - Sample Statement
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/2f33c003-c366-4cdc-a8b2-b8f73b45b610)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a8ed9d29-30d2-4a6e-8646-027d9f69b7ba)
   
 
 
