@@ -12,13 +12,15 @@
 
 ## **Steps 1.  Phase 1: Compile AI Engine application and PL Kernels and Link the System** 
 
-  **1.** Update the paths in the file `system_riviera.cfg`
+  **1.** Update the paths in the file `system_riviera.cfg` in /15-post-link-recompile/Files/HwLink directory
 
   **2.** To build the design please follow the steps described [here](https://github.com/Xilinx/Vitis-Tutorials/blob/2022.1/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile/DirectRecompileMakefile_Flow.md) and then go to **Step 2.** or use the short version below:
 
-  To build the design run the following command
-  
-  `make kernels aie link`
+  To build the design run the following commands
+  ```
+  cd 15-post-link-recompile/WithoutIntermediatePlatform/
+  make kernels aie link
+  ```
   
   If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile/WithoutIntermediatePlatform/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
