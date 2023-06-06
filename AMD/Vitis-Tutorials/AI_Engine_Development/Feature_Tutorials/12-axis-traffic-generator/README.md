@@ -6,7 +6,6 @@
 
 **Step 2.** Launching Emulation with the Riviera-PRO GUI
 
-**Step 3.** Generating a Code Coverage HTML report
 
 ## **Steps 1: Build Design** 
 
@@ -57,23 +56,6 @@
 
   Type the `endsim` command in the console.
 
-## **Step 3.** Generate Code Coverage HTML report
-
-  **1.** Update path in:
-  
-  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/12-axis-traffic-generator <Example_path>/12-axis-traffic-generator/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
-  
-  **2.** Run `acdb report` to generate the report in html format 
-  
-  **3.** Open `code_coverage_report.html`
-  
-  - Sample Summary
-  
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/401a2337-6de4-48d8-a46f-c37023f055c0)
-
-  - Sample Statement
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/5aec1620-646a-4f30-8894-486a2d398558)
 
   
 
