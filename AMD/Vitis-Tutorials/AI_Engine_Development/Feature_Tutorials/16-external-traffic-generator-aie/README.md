@@ -67,7 +67,7 @@
 
   **1.** Update path in:
   
-  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/05-AI-engine-versal-integration <Example_path>/05-AI-engine-versal-integration/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
+  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/16-external-traffic-generator-aie <Example_path>/16-external-traffic-generator-aie/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
   
   **2.** Run `acdb report` to generate the report in html format 
   
@@ -75,11 +75,11 @@
   
   - Sample Summary
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f866f11f-056e-461c-95fc-6a5f96e684b9)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/6df0dec5-03ed-46a3-86d2-17609ed5e4dc)
 
   - Sample Statement
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/9a0472a2-f9f3-45da-a551-055a98d2a13f)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f38f3f2d-2e6a-46fd-b7c7-82d20c803389)
 
   
 
