@@ -2,7 +2,7 @@
 
 ## **Steps**
 
-**Step 1.** Building the Design with 
+**Step 1.** Building the Design 
 
 **Step 2.** Launching Emulation with the Riviera-PRO GUI
 
