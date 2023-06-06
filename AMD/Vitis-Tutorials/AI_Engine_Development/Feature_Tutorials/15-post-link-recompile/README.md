@@ -64,11 +64,12 @@
   
   - Sample Summary
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f866f11f-056e-461c-95fc-6a5f96e684b9)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/be1db294-20e3-4fdf-bf14-1b3c5d1cdbae)
 
   - Sample Statement
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/9a0472a2-f9f3-45da-a551-055a98d2a13f)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/2f33c003-c366-4cdc-a8b2-b8f73b45b610)
+
 
   
 
