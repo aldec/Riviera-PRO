@@ -86,7 +86,7 @@
 
   `make aie2 package2`
   
-  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile/WithoutIntermediatePlatform/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+  After `make aie2` the vitis_design_wrapper_sim_wrapper_simulate.do file is created anew. If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile/WithoutIntermediatePlatform/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
 ## **Step 5.** Phase 2: Launching Emulation with the Riviera-PRO Waveform GUI
 
