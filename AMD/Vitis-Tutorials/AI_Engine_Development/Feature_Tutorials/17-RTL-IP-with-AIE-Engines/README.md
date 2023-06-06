@@ -40,19 +40,23 @@
 ```
   **4.** After some time the test should succeed.
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/483afa0c-1787-4b06-9b49-e97276de1066)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d0397fd2-71ff-40eb-ba1f-8f4f91af27d1)
 
   **5.** To exit QEMU press `Ctrl+A, x`
 
   **6.** Expand signal groups on Waveform.
+  
+  - CIPS - Sample signals
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/87dd5fb3-188a-427b-8bb0-59a9a6fbef78)
 
   - S2MM - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d97259fc-828b-4735-8de7-6413755aa543)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/dd9dc2c8-f9d8-403b-9b92-61824348e271)
 
   - DDR4 - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/c81a0e76-f1a4-4405-ab4b-eeb32bcc9334)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/cddf3735-119c-4cda-93f0-5c63dd6ac861)
 
   **7.** Stop simulation.
 
@@ -62,7 +66,7 @@
 
   **1.** Update path in:
   
-  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/05-AI-engine-versal-integration <Example_path>/05-AI-engine-versal-integration/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
+  `acdb report -noinfo -db code_coverage.acdb -replace_path <Example_path>/17-RTL-IP-with-AIE-Engines <Example_path>/17-RTL-IP-with-AIE-Engines/_x/link/vivado/vpl/prj/ -html -o code_coverage_report.html` 
   
   **2.** Run `acdb report` to generate the report in html format 
   
@@ -70,11 +74,11 @@
   
   - Sample Summary
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f866f11f-056e-461c-95fc-6a5f96e684b9)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a7e612af-87c7-4cb0-96d4-77dc788ecfcc)
 
   - Sample Statement
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/9a0472a2-f9f3-45da-a551-055a98d2a13f)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4c44348e-885e-45f5-a532-3c19d23b441a)
 
   
 
