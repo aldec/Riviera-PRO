@@ -81,8 +81,8 @@
   
   **2.** Add specific signals on Waveform e.g.
   ```
-  	wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*
-	  wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
+  wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*
+  wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
   ```
   **3.** Do `run -all` in Riviera-PRO when simulator is ready.
 
