@@ -84,7 +84,15 @@
 
 ## **Step 4.** Advanced Dataflow
 
-  1.
-
+  **1.** Run the following commands:
+  ```
+  dataflow.view.activate
+  dataflow.mode -hierarchical
+  ```  
+  **2.** Add the selected instance, e.g.:
+  ```
+  dataflow.add -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/s2mm/
+  ```
+  
 
 
