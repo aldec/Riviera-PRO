@@ -79,9 +79,13 @@
 
   `make run_hw_emu`  
   
-  **2.** Do `run -all` in Riviera-PRO when simulator is ready.
+  **2.** Add specific signals on Waveform e.g.
+  
+  `wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*`
+  
+  **3.** Do `run -all` in Riviera-PRO when simulator is ready.
 
-  **3.** When appear: 
+  **4.** When appear: 
 
   `root@versal-rootfs-common-20221:~#`
 
@@ -91,37 +95,23 @@
   cd /mnt
   ./host.exe a.xclbin
 ```
-  **4.** After some time the test should succeed.
+  **5.** After some time the test should succeed.
   
   # **Synchronous Update of Scalar RTP**
   
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/2dccf03f-b4d5-41cf-a95b-cee712e6f6d0)
 
-
   **5.** To exit QEMU press `Ctrl+A, x`
 
   **6.** Expand signal groups on Waveform.
   
-  - CIPS - Sample signals
+  - AI ENGINE- Sample signals
   
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/87dd5fb3-188a-427b-8bb0-59a9a6fbef78)
-
-  - S2MM - Sample signals
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/dd9dc2c8-f9d8-403b-9b92-61824348e271)
-
-  - DDR4 - Sample signals
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/cddf3735-119c-4cda-93f0-5c63dd6ac861)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f4349897-2a4a-4156-8d06-b8ff4f5e7a96)
 
   **7.** Stop simulation.
 
   Type the `endsim` command in the console.
-
-
-  - Sample Statement
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4c44348e-885e-45f5-a532-3c19d23b441a)
 
   
 
