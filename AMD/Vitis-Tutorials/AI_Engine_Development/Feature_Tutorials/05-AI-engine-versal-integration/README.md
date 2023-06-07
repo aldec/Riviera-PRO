@@ -59,10 +59,8 @@
   - AI ENGINE  - Sample signals
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d67d0ba9-a430-4235-9511-8ba90e61a0ae)
-
-  **7.** Stop simulation.
-
-  Type the `endsim` command in the console.
+  
+  **7.** Go to **Step.4** if you want use Advanced Dataflow. Otherwise type the `endsim` command in the console.
 
 ## **Step 3.** Generate Code Coverage HTML report
 
@@ -84,15 +82,13 @@
 
 ## **Step 4.** Advanced Dataflow
 
-  **1.** Run the following commands:
-  ```
-  dataflow.view.activate
-  dataflow.mode -hierarchical
-  ```  
-  **2.** Add the selected instance, e.g.:
-  ```
-  dataflow.add -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/s2mm/
-  ```
+  **1.** Select from Waveform interesting signal. Right-click on it then `Add to` and `Dataflow`
+
+  **2.** The Dataflow window displays interconnects of an active design. The primary purpose is to explore the connectivity of the design. Below is an example fragment of Dataflow window on the signal from the module S2MM
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4adb0e73-ed1b-4bbb-8d53-3933af88d645)
+
+
   
 
 
