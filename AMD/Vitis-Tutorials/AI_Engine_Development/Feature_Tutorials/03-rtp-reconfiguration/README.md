@@ -80,9 +80,10 @@
   `make run_hw_emu`  
   
   **2.** Add specific signals on Waveform e.g.
-  
-  `wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*`
-  
+  ```
+  	wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*
+	  wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
+  ```
   **3.** Do `run -all` in Riviera-PRO when simulator is ready.
 
   **4.** When appear: 
@@ -108,7 +109,75 @@
   - AI ENGINE- Sample signals
   
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/f4349897-2a4a-4156-8d06-b8ff4f5e7a96)
+  
+  - DDR4 - Sample signals
 
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/556b4a90-63ef-40b6-a1cd-ca1dce112e71)
+  
+  # **Asynchronous Update of Array RTP**
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a06f333a-2e24-4049-b01a-bbdffaa7e0b5)
+
+  **5.** To exit QEMU press `Ctrl+A, x`
+
+  **6.** Expand signal groups on Waveform.
+  
+  - AI ENGINE- Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/b5a8e5c8-907d-47a7-8dde-271e63525b5f)
+  
+  - DDR4 - Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/1112762e-7703-4883-b60b-70720222a0b4)
+  
+  # **Asynchronous Update of Scalar RTP**
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d7640668-734c-4762-ba60-f1f993da612f)
+
+  **5.** To exit QEMU press `Ctrl+A, x`
+
+  **6.** Expand signal groups on Waveform.
+  
+  - AI ENGINE- Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/65f74fef-db7e-4c3d-90b8-caf071911898)
+  
+  - DDR4 - Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a66f28f4-dbd4-49d2-9c52-2783f1c62e48)
+  
+  # **Asynchronous Update of Array RTP for AI Engine Kernel**
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/b8b2b42a-416a-4adc-a67f-f68ed6faacc6)
+
+  **5.** To exit QEMU press `Ctrl+A, x`
+
+  **6.** Expand signal groups on Waveform.
+  
+  - AI ENGINE- Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/1205b782-0bbb-4a29-b10d-6cc6f0ff66d2)
+  
+  - DDR4 - Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/8f522103-e233-437b-9971-6ada3237f6e3)
+ 
+   # **Asynchronous Array RTP Update and Read for AI Engine Kernel**
+  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/a00e4829-c030-4b8b-b8a7-17d7b09ce1c5)
+
+  **5.** To exit QEMU press `Ctrl+A, x`
+
+  **6.** Expand signal groups on Waveform.
+  
+  - AI ENGINE- Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/55f20be5-3f24-48dd-b9c9-61f8ce008493)
+  
+  - DDR4 - Sample signals
+
+   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/61550d2a-6052-4d95-957f-b2f9e3c5aea3)
+  
   **7.** Stop simulation.
 
   Type the `endsim` command in the console.
