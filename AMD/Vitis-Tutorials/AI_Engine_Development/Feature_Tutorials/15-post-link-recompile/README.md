@@ -55,6 +55,10 @@
   - DDR4 - Sample signals
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/7a7ab2c9-8471-4e48-a080-2215dbf4d13e)
+  
+  - AI ENGINE - Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/cb545b1b-96ec-484e-aaa1-15b0c36dbee0)
 
   **6.** Stop simulation.
 
