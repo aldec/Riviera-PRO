@@ -8,6 +8,8 @@
 
 **Step 3.** Generating a Code Coverage HTML report
 
+**Step 4.** Advanced Dataflow
+
 ## **Steps 1: Build Design** 
 
   **1.** Update the paths in the file `system_riviera.cfg`
@@ -18,7 +20,7 @@
   
   `make TARGET=hw_emu aie sim kernels xsa host package`
   
-  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage or Advanced Dataflow, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
 ## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
 
@@ -53,6 +55,10 @@
   - DDR4 - Sample signals
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/c81a0e76-f1a4-4405-ab4b-eeb32bcc9334)
+  
+  - AI ENGINE  - Sample signals
+
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d67d0ba9-a430-4235-9511-8ba90e61a0ae)
 
   **7.** Stop simulation.
 
@@ -76,7 +82,9 @@
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/9a0472a2-f9f3-45da-a551-055a98d2a13f)
 
-  
+## **Step 4.** Advanced Dataflow
+
+  1.
 
 
 
