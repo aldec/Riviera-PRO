@@ -10,7 +10,7 @@
 
   **1.** Update the paths in the file `system_riviera.cfg`
   
-  **2.** Download beamformer data from [here](https://www.xilinx.com/bin/public/openDownload?filename=beamformer_d) and extract to ./09-debug-walkthrough
+  **2.** Download beamformer data from [here](https://www.xilinx.com/bin/public/openDownload?filename=beamformer_2022_1.ide.zip) and extract to ./09-debug-walkthrough
 
   **3.** To build the design run the following command
   
