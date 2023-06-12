@@ -22,9 +22,17 @@
 
   `make run_hw_emu`
   
-  **2.** Do `run -all` in Riviera-PRO when simulator is ready.
+  **2.** Add specific signals on Waveform e.g.
+  ```
+  wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
+  wave -vgroup "S2MM" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/s2mm_1/*
+  wave -vgroup "MM2S" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/mm2s_1/*
+  wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*
+  ```
+  
+  **3.** Do `run -all` in Riviera-PRO when simulator is ready.
 
-  **3.** When appear: 
+  **4.** When appear: 
 
   `root@versal-rootfs-common-20221:~#`
 
@@ -34,15 +42,15 @@ mount /dev/mmcblk0p1 /mnt
 cd /mnt
 ./host.exe a.xclbin
 ```
-  **4.** After some time the test should succeed.
+  **5.** After some time the test should succeed.
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/545ca629-d3c5-4e8c-b574-ed095727f689)
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/15783178-c800-450c-b589-dcabe792d32c)
 
-  **5.** To exit QEMU press `Ctrl+A, x`
+  **6.** To exit QEMU press `Ctrl+A, x`
 
-  **6.** Expand signal groups on Waveform.
+  **7.** Expand signal groups on Waveform.
 
   - S2MM - Sample signals
 
