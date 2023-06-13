@@ -58,5 +58,7 @@ cd /mnt
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/fa00c205-902e-4a40-9890-d852771ed8eb)
 
-  **7.** Type the `endsim` command in the console.
+  **7.** Stop simulation.
+  
+  Type the `endsim` command in the console.
 
