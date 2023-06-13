@@ -8,6 +8,8 @@
 
 **Step 3.** Generating a Code Coverage HTML report
 
+**Step 4.** Advanced Dataflow
+
 ## **Steps 1: Build Design** 
 
   **1.** Update the paths in the file `system_riviera.cfg`
@@ -18,7 +20,7 @@
   
   `make polar_clip.xo kernels aie xclbin host package`
   
-  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/17-RTL-IP-with-AIE-Engines/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
+  If you want to use a macro prepared to display important signals on Waveform and with the possibility of using Code Coverage or Advanced Dataflow, then use the file vitis_design_wrapper_sim_wrapper_simulate.do located on GitHub instead of the one generated in Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/17-RTL-IP-with-AIE-Engines/sw/sim/behav_waveform/riviera/. The results shown below are generated using the vitis_design_wrapper_sim_wrapper_simulate.do file from GitHub.
 
 ## **Step 2.** Launching Emulation with the Riviera-PRO Waveform GUI
 
@@ -84,7 +86,13 @@
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/4c44348e-885e-45f5-a532-3c19d23b441a)
 
+## **Step 4.** Advanced Dataflow
+
+  **1.** Select from Waveform interesting signal. Right-click on it then `Add to` and `Dataflow`
+
+  **2.** The Dataflow window displays interconnects of an active design. The primary purpose is to explore the connectivity of the design. Below is an example fragment of Dataflow window on the signal from the module S2MM
   
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/c2d2d6c8-2bc8-4063-98ed-d403d502c9ec)
 
 
 
