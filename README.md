@@ -69,12 +69,12 @@
 **4. Running Examples**
    
    The following examples are supported by Riviera-PRO. Selecting a specific example will redirect to the place where the files modified for Riviera-PRO are located, as well as the description of the run and the results.
-   - [Runtime Parameter Reconfiguration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/03-rtp-reconfiguration)
-   - [AI Engine Versal Integration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration)
-   - [AI Engine Debug Walkthrough Tutorial - From Simulation to Hardware](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/09-debug-walkthrough)
-   - [Versal Emulation Waveform Analysis](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai-engine-emulation-waveform-analysis)
-   - [AXIS External Traffic Generator Feature Tutorial](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator)
-   - [AI Engine Performance and Deadlock Analysis Tutorial](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/13-aie-performance-analysis)
-   - [Post-Link Recompile of an AI Engine Application](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile)
-   - [Python and C++ External Traffic Generators for AI Engine Simulation and Emulation Flows](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/16-external-traffic-generator-aie)
-   - [Using RTL IP with AI Engines](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/17-RTL-IP-with-AIE-Engines)
+   - [Runtime Parameter Reconfiguration](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/03-rtp-reconfiguration)
+   - [AI Engine Versal Integration](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration)
+   - [AI Engine Debug Walkthrough Tutorial - From Simulation to Hardware](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/09-debug-walkthrough)
+   - [Versal Emulation Waveform Analysis](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai-engine-emulation-waveform-analysis)
+   - [AXIS External Traffic Generator Feature Tutorial](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator)
+   - [AI Engine Performance and Deadlock Analysis Tutorial](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/13-aie-performance-analysis)
+   - [Post-Link Recompile of an AI Engine Application](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/15-post-link-recompile)
+   - [Python and C++ External Traffic Generators for AI Engine Simulation and Emulation Flows](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/16-external-traffic-generator-aie)
+   - [Using RTL IP with AI Engines](https://github.com/aldec/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/17-RTL-IP-with-AIE-Engines)
