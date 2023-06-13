@@ -64,9 +64,7 @@
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/2d7559d5-29c2-4b56-b570-5dae03cbc00a)
 
-  **7.** Stop simulation.
-
-  Type the `endsim` command in the console.
+  **7.** Go to Step.4 if you want use Advanced Dataflow. Otherwise type the `endsim` command in the console.
 
 ## **Step 3.** Generate Code Coverage HTML report
 
