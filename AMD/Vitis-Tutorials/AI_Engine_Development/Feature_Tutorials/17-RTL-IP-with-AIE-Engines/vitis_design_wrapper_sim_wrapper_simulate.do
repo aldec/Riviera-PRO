@@ -17,6 +17,9 @@ asim +access +r +m+vitis_design_wrapper_sim_wrapper -L unisims_ver -L unimacro_v
 ###################### asim for Code Coverage ####################################
 #asim +access +r +m+vitis_design_wrapper_sim_wrapper -L unisims_ver -L unimacro_ver -L secureip -L xpm -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L axi_intc_v4_1_17 -L xlconcat_v2_1_4 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L xilinx_vip -O5 +access +r -acdb -acdb_file code_coverage.acdb -cc_all xil_defaultlib.vitis_design_wrapper_sim_wrapper xil_defaultlib.glbl
 
+###################### asim for Advanced Dataflow ####################################
+#asim +access +r +m+vitis_design_wrapper_sim_wrapper -L unisims_ver -L unimacro_ver -L secureip -L xpm -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L axi_intc_v4_1_17 -L xlconcat_v2_1_4 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L xilinx_vip -O5 +access +r -advdataflow xil_defaultlib.vitis_design_wrapper_sim_wrapper xil_defaultlib.glbl
+
 if { [file exists vitis_params.tcl] } {
   source vitis_params.tcl
 }
