@@ -25,7 +25,6 @@
   **2.** Add specific signals on Waveform e.g.
   ```
   wave -vgroup "DDR4" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/noc_ddr4/*
-  wave -vgroup "CIPS" -rec sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/cips_noc/*
   wave -vgroup "AI ENGINE" sim:/vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i/ai_engine_0/*
   ```
   
@@ -51,17 +50,13 @@ cd /mnt
 
   **7.** Expand signal groups on Waveform.
 
-  - S2MM - Sample signals
-
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d97259fc-828b-4735-8de7-6413755aa543)
-
   - DDR4 - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/c81a0e76-f1a4-4405-ab4b-eeb32bcc9334)
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/758387d1-25f1-49a7-967e-861289ab0de4)
   
   - AI ENGINE  - Sample signals
 
-  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/d67d0ba9-a430-4235-9511-8ba90e61a0ae)
-  
+  ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/fa00c205-902e-4a40-9890-d852771ed8eb)
+
   **7.** Type the `endsim` command in the console.
 
