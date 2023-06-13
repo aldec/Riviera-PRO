@@ -109,6 +109,8 @@
 
   ![image](https://github.com/maciejpasierbek/Riviera-PRO/assets/38097741/3a0c7747-350e-4ff5-bf6f-f43d442425fd)
 
+ ** 7.** Stop simulation.
+
   Type the `endsim` command in the console.
 
   
