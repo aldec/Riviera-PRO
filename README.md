@@ -71,7 +71,6 @@
    The following examples are supported by Riviera-PRO. Selecting a specific example will redirect to the place where the files modified for Riviera-PRO are located, as well as the description of the run and the results.
    - [Runtime Parameter Reconfiguration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/03-rtp-reconfiguration)
    - [AI Engine Versal Integration](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/05-AI-engine-versal-integration)
-   - [Versal System Design Clocking](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/06-versal-system-design-clocking-tutorial)
    - [AI Engine Debug Walkthrough Tutorial - From Simulation to Hardware](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/09-debug-walkthrough)
    - [Versal Emulation Waveform Analysis](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/11-ai-engine-emulation-waveform-analysis)
    - [AXIS External Traffic Generator Feature Tutorial](https://github.com/maciejpasierbek/Riviera-PRO/tree/main/AMD/Vitis-Tutorials/AI_Engine_Development/Feature_Tutorials/12-axis-traffic-generator)
