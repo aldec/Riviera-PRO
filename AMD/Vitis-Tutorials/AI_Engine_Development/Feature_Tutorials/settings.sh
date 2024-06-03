@@ -5,6 +5,12 @@ export PLATFORM_REPO_PATHS=
 #Set up your platform
 export PLATFORM=${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202210_1/xilinx_vck190_base_202210_1.xpfm
 
+#Set up your PETALINUX_PATH environment variable to PetaLinux location
+export PETALINUX_PATH=
+
+#Set up your XRT_PATH environment variable to PetaLinux location
+export XRT_PATH=
+
 #Set up your ROOTFS to point to xilinx-versal-common-v2022.1/rootfs.ext4.
 export ROOTFS=${PLATFORM_REPO_PATHS}/rootfs.ext4
 
@@ -18,17 +24,17 @@ export LM_LICENSE_FILE=
 export ALDEC_LICENSE_FILE=
 
 #Set up your PATH to point to builded XRT
-export PATH=<Petalinux_path>/Petalinux/2022.1/sysroots/x86_64-petalinux-linux/usr/bin/aarch64-xilinx-linux:<XRT_path>/XRT/build/Release/opt/xilinx/xrt/include/:$PATH
+export PATH=${PETALINUX_PATH}/sysroots/x86_64-petalinux-linux/usr/bin/aarch64-xilinx-linux:${XRT_PATH}/build/Release/opt/xilinx/xrt/include/:$PATH
 
 #Set up your SYSROOT to point to sysroots in Petalinux
-export SYSROOT=<Petalinux_path>/Petalinux/2022.1/sysroots
+export SYSROOT=${PETALINUX_PATH}/sysroots
 
 #Set up environment for XRT
-cd <XRT_path>/XRT/build/Release/opt/xilinx/xrt
+cd ${XRT_PATH}/build/Release/opt/xilinx/xrt
 source setup.sh
 
 #Set up environment for SDKTARGETSYSROOT, CC, CXX and CPP
-export SDKTARGETSYSROOT=<Petalinux_path>/Petalinux/2022.1/sysroots/cortexa72-cortexa53-xilinx-linux
+export SDKTARGETSYSROOT=${PETALINUX_PATH}/sysroots/cortexa72-cortexa53-xilinx-linux
 export CC="aarch64-xilinx-linux-gcc  -mcpu=cortex-a72.cortex-a53 -march=armv8-a+crc -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=$SDKTARGETSYSROOT"
 export CXX="aarch64-xilinx-linux-g++  -mcpu=cortex-a72.cortex-a53 -march=armv8-a+crc -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=$SDKTARGETSYSROOT"
 export CPP="aarch64-xilinx-linux-gcc -E  -mcpu=cortex-a72.cortex-a53 -march=armv8-a+crc -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=$SDKTARGETSYSROOT"
