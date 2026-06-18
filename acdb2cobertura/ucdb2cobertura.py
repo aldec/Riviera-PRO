@@ -5,7 +5,7 @@
 #
 # License:
 # ============================================================================
-# Copyright 2021 Aldec Inc.
+# Copyright 2026 Aldec Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,12 +24,14 @@
 # Aldec Revision:
 # 10/10/21 - initial version
 # 12/12/21 - additional switches: --units and --hierarchy
+# 03/01/22 - added support for exclusion flags
+# 16/06/26 - replaced XPath with event driven parser
 # End Aldec Revision
 # ============================================================================
 # usage: ucdb2cobertura.py [-h] -i INPUT -o OUTPUT [--units | --hierarchy]
 #
 # Arguments:
-#  -h, --help            show this help message and exit
+#  -h, --help            Show this help message and exit
 #  -i INPUT, --input INPUT
 #                        Input UCDB XML file
 #  -o OUTPUT, --output OUTPUT
@@ -39,17 +41,32 @@
 # ============================================================================
 
 from time import time
-from lxml import etree
-from collections import defaultdict, namedtuple
+
+from collections import defaultdict
+from dataclasses import dataclass
+from functools import partial
 from itertools import groupby
+from lxml import etree
 from operator import attrgetter
 from typing import List, Dict
+from warnings import warn
 
-StatementData = namedtuple(
-    "StatementData",
-    ["file", "line", "index", "instance", "hits"],
+UCDB_EXCLUDE_PRAGMA = 0x00000020
+UCDB_EXCLUDE_FILE = 0x00000040
+UCDB_EXCLUDE_INST = 0x00000080
+UCDB_EXCLUDE_AUTO = 0x00000100
+
+UCDB_EXCLUDED = (
+    UCDB_EXCLUDE_FILE | UCDB_EXCLUDE_PRAGMA | UCDB_EXCLUDE_INST | UCDB_EXCLUDE_AUTO
 )
 
+@dataclass
+class StatementData:
+    file = ""
+    line = 0
+    index = 0
+    instance = ""
+    hits = 0
 
 class CoberturaClass:
     def __init__(self, name: str, source_file: str):
@@ -72,7 +89,12 @@ class CoberturaClass:
         class_node.attrib["filename"] = self.source_file
         class_node.attrib["complexity"] = "0"
         class_node.attrib["branch-rate"] = "0"
-        class_node.attrib["line-rate"] = str(self.lines_covered / self.lines_valid)
+
+        try:
+            class_node.attrib["line-rate"] = str(self.lines_covered / self.lines_valid)
+        except ZeroDivisionError:
+            class_node.attrib["line-rate"] = "1"
+
         class_node.append(etree.Element("methods"))
         lines_node = etree.SubElement(class_node, "lines")
 
@@ -109,7 +131,13 @@ class CoberturaPackage:
         package_node.attrib["name"] = self.name
         package_node.attrib["complexity"] = "0"
         package_node.attrib["branch-rate"] = "0"
-        package_node.attrib["line-rate"] = str(self.lines_covered / self.lines_valid)
+
+        try:
+            package_node.attrib["line-rate"] = str(
+                self.lines_covered / self.lines_valid
+            )
+        except ZeroDivisionError:
+            package_node.attrib["line-rate"] = "1"
 
         package_node.append(classes_node)
 
@@ -166,7 +194,14 @@ class CoberturaCoverage:
 
         coverage_node.attrib["lines-valid"] = str(self.lines_valid)
         coverage_node.attrib["lines-covered"] = str(self.lines_covered)
-        coverage_node.attrib["line-rate"] = str(self.lines_covered / self.lines_valid)
+
+        try:
+            coverage_node.attrib["line-rate"] = str(
+                self.lines_covered / self.lines_valid
+            )
+        except ZeroDivisionError:
+            coverage_node.attrib["line-rate"] = "1"
+            warn("The Input file does not contain any valid statement nodes.")
 
         return etree.tostring(
             coverage_node, pretty_print=True, encoding="utf-8", xml_declaration=True
@@ -174,21 +209,162 @@ class CoberturaCoverage:
 
 
 class UcdbParser:
-    def __init__(self, filename: str, merge_instances: bool):
+    ATTR_TAG = None
+    BIN_TAG = None
+    COUNT_TAG = None
+    SCOPE_TAG = None
+    SRC_TAG = None
+
+    def __init__(self, merge_instances: bool):
         self.merge_instances = merge_instances
 
-        file = open(filename)
-        self.tree = etree.parse(filename)
-        file.close()
+        self.tag_start_handlers = {}
+        self.tag_end_handlers = {}
+        self.data_handler = None
 
-        self.nsmap = self.tree.getroot().nsmap
+        self.scope_stack = []
+
+        self.current_statement_data = None
+        self.current_instance_path_cached = None
+        self.is_current_statement_excluded = False
+
+        self.statements = defaultdict(lambda: defaultdict(list))
 
         self.coverage = CoberturaCoverage()
         self.statements_count = 0
         self.statements_covered = 0
 
+    def close(self):
+        pass
+
+    def start_ns(self, prefix, uri):
+        if prefix != "ux":
+            return
+
+        self.init_handlers(uri)
+
+    def start(self, tag, attributes):
+        if tag not in self.tag_start_handlers:
+            return
+
+        self.tag_start_handlers[tag](attributes)
+    
+    def end(self, tag):
+        if tag not in self.tag_end_handlers:
+            return
+
+        self.tag_end_handlers[tag]()
+
+    def data(self, text):
+        if self.data_handler is None:
+            return
+
+        self.data_handler(text)
+        self.data_handler = None
+
+    def init_tag_names(self, ux_uri):
+        self.ATTR_TAG = f"{{{ux_uri}}}attr"
+        self.BIN_TAG = f"{{{ux_uri}}}bin"
+        self.COUNT_TAG = f"{{{ux_uri}}}count"
+        self.SCOPE_TAG = f"{{{ux_uri}}}scope"
+        self.SRC_TAG = f"{{{ux_uri}}}src"
+
+    def init_handlers(self, uri):
+        self.init_tag_names(uri)
+
+        self.tag_start_handlers = {
+            self.ATTR_TAG: self.handle_attr_start,
+            self.BIN_TAG: self.handle_bin_start,
+            self.COUNT_TAG: self.handle_count_start,
+            self.SCOPE_TAG: self.handle_scope_start,
+            self.SRC_TAG: self.handle_src_start,
+        }
+
+        self.tag_end_handlers = {
+            self.BIN_TAG: self.handle_bin_end,
+            self.SCOPE_TAG: self.handle_scope_end,
+        }
+
+    def handle_attr_start(self, attributes):
+        if self.current_statement_data is None:
+            return
+
+        if "key" not in attributes or attributes["key"] != "#SINDEX#":
+            return
+
+        def index_handler(data, statement_data):
+            statement_data.index = int(data)
+
+        self.data_handler = partial(index_handler, statement_data = self.current_statement_data)
+
+    def handle_bin_start(self, attributes):
+        if not self.scope_stack or self.scope_stack[-1] is None:
+            return
+
+        if attributes.get("type", None) != "STMTBIN":
+            return
+
+        self.current_statement_data = StatementData()
+        self.current_statement_data.instance = self.current_instance_path()
+        self.is_current_statement_excluded = (int(attributes["flags"], 16) & UCDB_EXCLUDED) != 0
+
+    def handle_bin_end(self):
+        if self.current_statement_data is None:
+            return
+
+        statement_list = self.statements[self.current_statement_data.file]
+
+        if not self.is_current_statement_excluded:
+            statement_list[self.current_statement_data.line].append(self.current_statement_data)
+
+        self.current_statement_data = None
+        self.is_current_statement_excluded = False
+
+    def handle_count_start(self, attributes):
+        if self.current_statement_data is None:
+            return
+
+        def hits_handler(data, statement_data):
+            statement_data.hits = int(data)
+
+        self.data_handler = partial(hits_handler, statement_data = self.current_statement_data)
+
+    def handle_scope_start(self, attributes):
+        self.current_instance_path_cached = None
+
+        if "type" in attributes and attributes["type"].startswith("DU_"):
+            self.scope_stack.append(None)
+
+            return
+
+        if self.scope_stack and self.scope_stack[-1] is None:
+            self.scope_stack.append(None)
+
+            return
+
+        self.scope_stack.append(attributes["name"])
+
+    def handle_scope_end(self):
+        self.current_instance_path_cached = None
+        self.scope_stack.pop()
+
+    def handle_src_start(self, attributes):
+        if self.current_statement_data is None:
+            return
+
+        self.coverage.add_source(attributes["workdir"])
+
+        self.current_statement_data.file = attributes["file"]
+        self.current_statement_data.line = int(attributes["line"])
+
+    def current_instance_path(self):
+        if self.current_instance_path_cached is None:
+            self.current_instance_path_cached = ".".join(self.scope_stack)
+
+        return self.current_instance_path_cached
+
     def get_cobertura_model(self):
-        self.parse_statement_coverage()
+        self.convert_statement_coverage()
 
         return self.coverage
 
@@ -196,43 +372,21 @@ class UcdbParser:
         grouped_stmts = []
 
         sorted_stmts = sorted(statements, key=attrgetter("index"))
-        for index, stmts in groupby(sorted_stmts, key=attrgetter("index")):
-            hit = any((stmt.hits for stmt in stmts))
 
-            grouped_stmts.append(
-                StatementData(
-                    file=statements[0].file,
-                    line=statements[0].line,
-                    index=index,
-                    instance="",
-                    hits=hit,
-                )
-            )
+        for index, stmts in groupby(sorted_stmts, key=attrgetter("index")):
+            statement_data = StatementData()
+
+            statement_data.file = statements[0].file
+            statement_data.line = statements[0].line
+            statement_data.index = index
+            statement_data.hits = any((stmt.hits for stmt in stmts))
+
+            grouped_stmts.append(statement_data)
 
         return grouped_stmts
 
-    def parse_statement_coverage(self):
-        scopes = self.tree.xpath(
-            "/ux:ucdb/ux:scope[.//ux:bin[@type='STMTBIN']]", namespaces=self.nsmap
-        )
-
-        nodes = []
-
-        for scope_node in scopes:
-            if scope_node.get("type").startswith("DU_"):
-                continue
-            nodes.extend(
-                scope_node.xpath(".//ux:bin[@type='STMTBIN']", namespaces=self.nsmap)
-            )
-
-        statements = defaultdict(lambda: defaultdict(list))
-
-        for node in nodes:
-            workdir, stmt_data = self.parse_statement_node(node)
-            self.coverage.add_source(workdir)
-            statements[stmt_data.file][stmt_data.line].append(stmt_data)
-
-        for file, file_lines in statements.items():
+    def convert_statement_coverage(self):
+        for file, file_lines in self.statements.items():
             package = CoberturaPackage(file)
             cobertura_class = CoberturaClass(file, file)
             package.add_class(cobertura_class)
@@ -250,30 +404,6 @@ class UcdbParser:
                 self.statements_covered += covered
 
                 cobertura_class.add_statement(line, hit)
-
-    def parse_statement_node(self, node):
-        src_node = node.find("./ux:src", namespaces=self.nsmap)
-        workdir = src_node.get("workdir")
-
-        instance_path = ".".join(
-            (scope.get("name") for scope in node.iterancestors("{*}scope"))
-        )
-
-        stmt_index = int(
-            node.find("./ux:attr[@key='#SINDEX#']", namespaces=self.nsmap).text
-        )
-
-        count = int(node.find("./ux:count", namespaces=self.nsmap).text)
-
-        stmt_data = StatementData(
-            file=src_node.get("file"),
-            line=int(src_node.get("line")),
-            index=stmt_index,
-            instance=instance_path,
-            hits=count,
-        )
-
-        return workdir, stmt_data
 
 
 if __name__ == "__main__":
@@ -317,20 +447,26 @@ if __name__ == "__main__":
 
     args = arg_parser.parse_args()
 
-    parser = UcdbParser(
-        args.input,
-        args.type == "units",
-    )
+    ucdb_parser = UcdbParser(args.type == "units")
 
-    model = parser.get_cobertura_model()
+    with open(args.input, "r") as file:
+        etree.parse(file, etree.XMLParser(target=ucdb_parser))
+
+    model = ucdb_parser.get_cobertura_model()
 
     with open(args.output, "w") as output_file:
         output_file.write(model.get_xml().decode("utf-8"))
 
-    print("Covered {}% of lines".format(model.lines_covered / model.lines_valid * 100))
+    try:
+        lines_coverage = model.lines_covered / model.lines_valid * 100
+    except ZeroDivisionError:
+        lines_coverage = 100
 
-    print(
-        "Covered {}% of statements".format(
-            parser.statements_covered / parser.statements_count * 100
-        )
-    )
+    print("Covered {}% of lines".format(lines_coverage))
+
+    try:
+        statement_coverage = ucdb_parser.statements_covered / ucdb_parser.statements_count * 100
+    except ZeroDivisionError:
+        statement_coverage = 100
+
+    print("Covered {}% of statements".format(statement_coverage))
